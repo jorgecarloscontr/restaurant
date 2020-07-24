@@ -5,6 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-emotion',
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -15,20 +17,56 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `gatsby-starter-default`,
+    //     short_name: `starter`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-strapi',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        apiURL: 'http://localhost:1337',
+        queryLimit: 1000,
+        contentTypes: [
+          'pages',
+          'testimonials',
+          'categories-menus',
+          'dishes',
+          'promos',
+          'galleries',
+        ],
+        singleTypes: [
+          'carousel-header',
+          'logo',
+          'about-us',
+          'our-concept',
+          'image-parallax',
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

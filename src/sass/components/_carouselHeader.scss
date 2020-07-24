@@ -1,0 +1,119 @@
+.carousel {
+  &__backgroundImage {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+
+    &__container {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    //---------------Animations---------------------
+    // HEADER MAIN
+    &--headerMain {
+      h1 {
+        animation: moveInRight 2s ease-out;
+      }
+
+      .button {
+        animation: moveInLeft 2s ease-out;
+      }
+    }
+
+    // HEADER MENU
+    &--headerMenu {
+      .carousel__backgroundImage__container {
+        align-items: flex-end;
+      }
+
+      .overflow--headerMenu-title {
+        overflow: hidden;
+
+        h1 {
+          animation: moveInBottom 1s ease-out;
+        }
+      }
+
+      .overflow--headerMenu-description {
+        overflow: hidden;
+
+        p {
+          animation: moveInBottom 1s ease-out;
+          animation-fill-mode: backwards;
+          animation-delay: .8s;
+        }
+      }
+
+      .overflow--headerMenu-button {
+        // Overflow hidden solo en lo que dura la animacion
+        animation: overflow-hidden 1s ease-out;
+        animation-fill-mode: backwards;
+        animation-delay: 1.6s;
+
+        .button {
+          animation: moveInBottom 1s ease-out;
+          animation-fill-mode: backwards;
+          animation-delay: 1.6s;
+          // animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    // HEADER RESERVATION
+    &--headerReservation {
+      .carousel__backgroundImage__container {
+        align-items: flex-start;
+      }
+
+      .overflow--headerReservation-title {
+        overflow: hidden;
+
+        h1 {
+          animation: moveInTop 1s ease-out;
+        }
+      }
+
+      .overflow--headerReservation-description {
+        overflow: hidden;
+
+        p {
+          animation: moveInBottom 1s ease-out;
+          animation-fill-mode: backwards;
+          animation-delay: .8s;
+        }
+      }
+
+      .button {
+        animation: scale-double 1s ease-out;
+        animation-fill-mode: backwards;
+        animation-delay: 1.6s;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 2rem;
+    line-height: 3rem;
+    max-width: 55rem;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  &__indicators {
+    margin-bottom: 3rem;
+
+    li {
+      height: 5px;
+    }
+
+  }
+}

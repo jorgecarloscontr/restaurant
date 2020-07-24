@@ -1,0 +1,7 @@
+@import "../layout/layout";
+@import "../components/gallery";
+@import "../components//visitUs";
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 3000 !important;
+}

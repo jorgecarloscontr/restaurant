@@ -1,0 +1,31 @@
+.button {
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: 3px;
+    font-size: var(--default-font-size);
+    transition: all .3s;
+    color: var(--color-white);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+
+  &--transparent {
+    color: var(--color-white);
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+  }
+
+  &--primary {
+    color: var(--color-white);
+    background: var(--color-secondary-light);
+  }
+}

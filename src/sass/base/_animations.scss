@@ -1,0 +1,78 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(-102%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    transform: translateY(102%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-double {
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Overlow hidden for parent of an element with animation,
+@keyframes overflow-hidden {
+  0% {
+    overflow: hidden;
+  }
+
+  99% {
+    overflow: hidden;
+  }
+
+  100% {
+    overflow: visible;
+  }
+}

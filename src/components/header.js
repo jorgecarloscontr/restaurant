@@ -1,42 +1,54 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import BackgroundImage from 'gatsby-background-image';
+import { css } from '@emotion/core';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+const Header = ({ title, image, description }) => {
+  return (
+    <header className="u-mb-big">
+      <BackgroundImage
+        tag="imageheader"
+        fluid={image}
+        fadeIn="soft"
+        css={css`
+          height: 70vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        `}
+      >
+        <h1 className="u-mb-medium">{title} </h1>
+        <p
+          css={css`
+            font-size: 2.5rem;
+            width: 50%;
+            color: white;
+            text-align: center;
+
+            @media only screen and (max-width: 51.56em) {
+              width: 80%;
+            }
+          `}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+          <span
+            css={css`
+              padding: 1rem 1.5rem;
+              background-image: linear-gradient(
+                to right bottom,
+                rgba(0, 0, 0, 0.3),
+                rgba(0, 0, 0, 0.6)
+              );
+              -webkit-box-decoration-break: clone;
+              box-decoration-break: clone;
+              line-height: 2;
+            `}
+          >
+            {description}
+          </span>
+        </p>
+      </BackgroundImage>
+    </header>
+  );
+};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;
