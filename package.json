@@ -18,7 +18,7 @@
     "gatsby-plugin-react-leaflet": "^2.0.13",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.3.4",
-    "gatsby-plugin-sharp": "^2.6.11",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-sharp": "^2.5.5",
